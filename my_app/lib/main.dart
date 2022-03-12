@@ -26,21 +26,7 @@ class CarouselDemo extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           routes: {
             '/': (ctx) => CarouselDemoHome(),
-            '/basic': (ctx) => BasicDemo(),
-            '/nocenter': (ctx) => NoCenterDemo(),
-            '/image': (ctx) => ImageSliderDemo(),
-            '/complicated': (ctx) => ComplicatedImageDemo(),
-            '/enlarge': (ctx) => EnlargeStrategyDemo(),
-            '/manual': (ctx) => ManuallyControlledSlider(),
-            '/noloop': (ctx) => NoonLoopingDemo(),
-            '/vertical': (ctx) => VerticalSliderDemo(),
-            '/fullscreen': (ctx) => FullscreenSliderDemo(),
-            '/ondemand': (ctx) => OnDemandCarouselDemo(),
-            '/indicator': (ctx) => CarouselWithIndicatorDemo(),
-            '/prefetch': (ctx) => PrefetchImageDemo(),
-            '/reason': (ctx) => CarouselChangeReasonDemo(),
-            '/position': (ctx) => KeepPageviewPositionDemo(),
-            '/multiple': (ctx) => MultipleItemDemo(),
+            '/fullscreen': (ctx) => FullscreenSliderDemo()
           },
         );
       },
@@ -68,9 +54,21 @@ class DemoItem extends StatelessWidget {
 class CarouselDemoHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return DefaultTabController(
+      length: 5, 
+      child: Scaffold(
       appBar: AppBar(
-        title: Text('Carousel demo'),
+        title: Text('Word of Life'),
+        bottom: const TabBar(
+            tabs: [
+              Tab(icon: Icon(Icons.church ), text: 'Church Online'),
+              Tab(icon: Icon(Icons.new_releases), text: 'I\'m New'),
+              Tab(icon: Icon(Icons.home), text: 'Listen\\Watch'),
+              Tab(icon: Icon(Icons.attach_money), text: 'Giving'),
+              Tab(icon: Icon(Icons.contact_mail ), text: 'Contact Us')
+
+            ],
+        ),
         actions: [
           IconButton(
               icon: Icon(Icons.nightlight_round),
@@ -81,23 +79,10 @@ class CarouselDemoHome extends StatelessWidget {
       ),
       body: ListView(
         children: <Widget>[
-          DemoItem('Basic demo', '/basic'),
-          DemoItem('No center mode demo', '/nocenter'),
-          DemoItem('Image carousel slider', '/image'),
-          DemoItem('More complicated image slider', '/complicated'),
-          DemoItem('Enlarge strategy demo slider', '/enlarge'),
-          DemoItem('Manually controlled slider', '/manual'),
-          DemoItem('Noon-looping carousel slider', '/noloop'),
-          DemoItem('Vertical carousel slider', '/vertical'),
           DemoItem('Fullscreen carousel slider', '/fullscreen'),
-          DemoItem('Carousel with indicator controller demo', '/indicator'),
-          DemoItem('On-demand carousel slider', '/ondemand'),
-          DemoItem('Image carousel slider with prefetch demo', '/prefetch'),
-          DemoItem('Carousel change reason demo', '/reason'),
-          DemoItem('Keep pageview position demo', '/position'),
-          DemoItem('Multiple item in one screen demo', '/multiple'),
         ],
       ),
+    ),
     );
   }
 }
@@ -341,12 +326,16 @@ class VerticalSliderDemo extends StatelessWidget {
     );
   }
 }
+List<String> imagePaths = [
+  "assets/gif1.gif",
+  "assets/gif2.gif",
+];
 
 class FullscreenSliderDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Fullscreen sliding carousel demo')),
+      appBar: AppBar(title: Text('Watch\\Learn')),
       body: Builder(
         builder: (context) {
           final double height = MediaQuery.of(context).size.height;
@@ -355,16 +344,13 @@ class FullscreenSliderDemo extends StatelessWidget {
               height: height,
               viewportFraction: 1.0,
               enlargeCenterPage: false,
-              // autoPlay: false,
+              autoPlay: true,
             ),
-            items: imgList
+            items: imagePaths
                 .map((item) => Container(
                       child: Center(
-                          child: Image.network(
-                        item,
-                        fit: BoxFit.cover,
-                        height: height,
-                      )),
+                          child: Image(image: AssetImage(item), width: 220, ), //Image.network(  item,  fit: BoxFit.cover,  height: height,)
+                          ),
                     ))
                 .toList(),
           );
