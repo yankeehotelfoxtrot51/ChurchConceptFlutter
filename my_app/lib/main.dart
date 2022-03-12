@@ -30,7 +30,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   int _selectedIndex = 0;
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  static const List<Widget> _widgetOptions = <Widget>[
+  static List<Widget> _widgetOptions = <Widget>[
     Text(
       'Church Online',
       style: optionStyle,
@@ -39,10 +39,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
       'I\'m New',
       style: optionStyle,
     ),
-    Text(
-      'Listen\\Watch',
-      style: optionStyle,
-    ),
+    FullscreenSliderDemo(),
     Text(
       'Giving',
       style: optionStyle,
