@@ -8,12 +8,12 @@ final themeMode = ValueNotifier(2);
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  static const String _title = 'Word of Life';
+  // static const String _title = 'Word of Life';
 
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      title: _title,
+      // title: _title,
       home: MyStatefulWidget(),
     );
   }
@@ -59,39 +59,69 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
+      extendBody: true,
       appBar: AppBar(
-        title: const Text('Word of Life'),
+        // centerTitle: true,
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Icon(
+              Icons.card_giftcard,
+              size: 25,
+            ),
+            Text(
+              'WORD OF LIFE CARLSBAD',
+              style: TextStyle(fontSize: 22),
+            ),
+            IconButton(
+                constraints: BoxConstraints(),
+                padding: EdgeInsets.zero,
+                onPressed: null,
+                icon: Icon(
+                  Icons.app_registration,
+                  color: Colors.white,
+                  size: 25,
+                ))
+          ],
+        ),
+        // actions: <Widget>[
+        //   IconButton(
+        //       onPressed: null,
+        //       icon: Icon(
+        //         Icons.list,
+        //         color: Colors.white,
+        //       ))
+        // ],
+        backgroundColor: Colors.transparent,
+        elevation: 0,
       ),
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
       bottomNavigationBar: BottomNavigationBar(
+        // elevation: 0, //getting rid of this leaves a shadow...
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.church),
-            label: 'Church Online',
-            backgroundColor: Colors.blue,
-          ),
+              icon: Icon(Icons.church),
+              label: 'Church Online',
+              backgroundColor: Colors.transparent),
           BottomNavigationBarItem(
-            icon: Icon(Icons.new_releases),
-            label: 'I\'m New',
-            backgroundColor: Colors.blue,
-          ),
+              icon: Icon(Icons.new_releases),
+              label: 'I\'m New',
+              backgroundColor: Colors.transparent),
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Listen\\Watch',
-            backgroundColor: Colors.blue,
-          ),
+              icon: Icon(Icons.home),
+              label: 'Listen\\Watch',
+              backgroundColor: Colors.transparent),
           BottomNavigationBarItem(
-            icon: Icon(Icons.attach_money),
-            label: 'Giving',
-            backgroundColor: Colors.blue,
-          ),
-           BottomNavigationBarItem(
-            icon: Icon(Icons.contact_mail),
-            label: 'Contact Us',
-            backgroundColor: Colors.blue,
-          ),
+              icon: Icon(Icons.attach_money),
+              label: 'Giving',
+              backgroundColor: Colors.transparent),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.contact_mail),
+              label: 'Contact Us',
+              backgroundColor: Colors.transparent),
         ],
         currentIndex: _selectedIndex,
         selectedItemColor: Colors.amber[800],
@@ -110,22 +140,43 @@ class FullscreenSliderDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Watch\\Learn')),
       body: Builder(
         builder: (context) {
-          final double height = MediaQuery.of(context).size.height;
+          final double _fullHeight = MediaQuery.of(context).size.height;
           return CarouselSlider(
             options: CarouselOptions(
-              height: height,
+              height: _fullHeight,
               viewportFraction: 1.0,
               enlargeCenterPage: false,
               autoPlay: true,
             ),
             items: imagePaths
                 .map((item) => Container(
-                      child: Center(
-                          child: Image(image: AssetImage(item), width: 220, ),  //Image.network(  item,  fit: BoxFit.cover,  height: height,)
-                          ),
+                      padding: EdgeInsets.only(top: 500),
+                      decoration: BoxDecoration(
+                          image: DecorationImage(
+                              image: AssetImage(item),
+                              fit: BoxFit.cover,
+                              colorFilter: ColorFilter.mode(
+                                Colors.black54,
+                                BlendMode.darken,
+                              ))),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text('urmom', style: TextStyle(color: Colors.white))
+                        ],
+                      ),
+                      // child: ColorFiltered(
+                      //   colorFilter: ColorFilter.mode(
+                      //     Colors.black54,
+                      //     BlendMode.darken,
+                      //   ),
+                      //   child: Image(
+                      //     image: AssetImage(item),
+                      //     fit: BoxFit.cover,
+                      //   ), //Image.network(  item,  fit: BoxFit.cover,  height: height,)
+                      // ),
                     ))
                 .toList(),
           );
