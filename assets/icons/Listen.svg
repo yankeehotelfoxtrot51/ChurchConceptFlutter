@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="27px" height="27px" viewBox="0 0 27 27" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Vector</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="iPhone-13-Pro-Max" transform="translate(-126.000000, -862.000000)" stroke="#FFFFFF" stroke-width="1.5">
+            <g id="Vector" transform="translate(127.000000, 863.000000)">
+                <path d="M3.57142857,25 C1.59898307,25 0,23.4010168 0,21.4285716 L0,16.0714287 C0,14.0989831 1.59898307,12.5 3.57142857,12.5 C5.543874,12.5 7.14285714,14.0989831 7.14285714,16.0714287 L7.14285714,21.4285716 C7.14285714,23.4010168 5.543874,25 3.57142857,25 Z" id="Vector-10"></path>
+                <path d="M21.4285714,25 C19.4561259,25 17.8571429,23.4010168 17.8571429,21.4285716 L17.8571429,16.0714287 C17.8571429,14.0989831 19.4561259,12.5 21.4285714,12.5 C23.4010169,12.5 25,14.0989831 25,16.0714287 L25,21.4285716 C25,23.4010168 23.4010169,25 21.4285714,25 Z" id="Vector-11"></path>
+                <path d="M25,16.0714286 L25,12.5 C25,5.59644059 19.403559,0 12.5,0 C5.59644075,0 0,5.59644059 0,12.5 L0,16.0714286" id="Vector-12"></path>
+            </g>
+        </g>
+    </g>
+</svg>

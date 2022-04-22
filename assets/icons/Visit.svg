@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="27px" height="27px" viewBox="0 0 27 27" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Vector</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="iPhone-13-Pro-Max" transform="translate(-331.000000, -862.000000)" stroke="#FFFFFF" stroke-width="1.5">
+            <g id="Vector" transform="translate(332.000000, 863.000000)">
+                <path d="M25,3.905357 L25,20.071429 C25,20.9885538 24.597159,21.859391 23.8981875,22.453156 C23.199214,23.0469225 22.2746975,23.30367 21.3696435,23.1553575 L17.360714,22.5 L7.639286,25 L2.6214285,24.1785725 C1.110007,23.931791 0,22.6260775 0,21.0946425 L0,4.92857125 C0,4.0114455 0.4028405,3.1406085 1.1018129,2.54684315 C1.80078525,1.95307775 2.72530275,1.6963305 3.63035725,1.84464288 L7.639286,2.5 L17.360714,0 L22.3785713,0.82142855 C23.8899925,1.06820855 25,2.37392125 25,3.905357 Z" id="Vector_578"></path>
+                <path d="M7.63928554,2.5 L7.63928554,25 M17.3607141,0 L17.3607141,22.5" id="Vector_578-2"></path>
+            </g>
+        </g>
+    </g>
+</svg>
